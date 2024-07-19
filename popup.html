@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strava Kudoser</title>
+  <script src="popup.js" defer></script>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Strava Kudoser</h1>
+  <form id="settingsForm">
+    <label for="clickTimeout">Click Timeout (ms):</label>
+    <input type="number" id="clickTimeout" name="clickTimeout" value="3000"><br><br>
+    <label for="retryTimeout">Retry Timeout (ms):</label>
+    <input type="number" id="retryTimeout" name="retryTimeout" value="3000"><br><br>
+    <label for="maxRetries">Max Retries:</label>
+    <input type="number" id="maxRetries" name="maxRetries" value="30"><br><br>
+    <label for="jitter">Jitter (ms):</label>
+    <input type="number" id="jitter" name="jitter" value="700"><br><br>
+    <button type="submit">Save</button>
+  </form>
+</body>
+</html>
