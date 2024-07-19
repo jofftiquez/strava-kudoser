@@ -12,6 +12,8 @@ document.getElementById('settingsForm').addEventListener('submit', function(e) {
       target: { tabId: tabs[0].id },
       func: startKudosClicker,
       args: [settings]
+    }, function() {
+      window.close(); // Close the popup after executing the script
     });
   });
 });
@@ -32,6 +34,13 @@ function startKudosClicker(settings) {
     async function clickKudos() {
       let buttons = Array.from(document.querySelectorAll(kudosButtonsSelector));
       console.warn(`Number of kudos: ${buttons.length}`);
+
+      if (buttons.length === 0) {
+        console.warn("No kudos found. Stopping.");
+        alert("No kudos found. Stopping.");
+        return;
+      }
+      
       let retries = 0;
       let index = 0;
       let seenButtons = new Set(buttons.map(btn => btn));
@@ -43,9 +52,9 @@ function startKudosClicker(settings) {
             const timeout = getRandomTimeout(clickTimeout, jitter);
             await new Promise(resolve => setTimeout(resolve, timeout));
             buttons[index].click();
-            console.warn(`👍 Kudos ${index + 1} took ${timeout}ms`);
+            console.warn(`Kudos ${index + 1} took ${timeout}ms`);
           } catch (error) {
-            console.error(`👎 Error kudos ${index + 1}:`, error);
+            console.error(`Error kudos ${index + 1}:`, error);
           }
           index++;
         } else {
@@ -67,6 +76,7 @@ function startKudosClicker(settings) {
         }
       }
       console.warn("Reached retry limit. Stopping.");
+      alert("Reached retry limit. Stopping.");
     }
 
     await clickKudos();

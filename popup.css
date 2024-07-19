@@ -8,25 +8,58 @@ h1 {
 }
 
 label {
+  font-weight: bold;
   display: block;
-  margin-top: 10px;
 }
 
 input {
-  width: 100%;
   padding: 5px;
-  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 30px;
 }
 
 button {
-  margin-top: 15px;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #F55200;
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #f55200ca;
+}
+
+.popup-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flex-row {
+  display: flex;
+  gap: 4px;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.terms-input:hover, .terms-label:hover {
+  cursor: pointer;
 }

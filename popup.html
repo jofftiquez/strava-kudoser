@@ -6,17 +6,67 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h1>Strava Kudoser</h1>
-  <form id="settingsForm">
-    <label for="clickTimeout">Click Timeout (ms):</label>
-    <input type="number" id="clickTimeout" name="clickTimeout" value="3000"><br><br>
-    <label for="retryTimeout">Retry Timeout (ms):</label>
-    <input type="number" id="retryTimeout" name="retryTimeout" value="3000"><br><br>
-    <label for="maxRetries">Max Retries:</label>
-    <input type="number" id="maxRetries" name="maxRetries" value="30"><br><br>
-    <label for="jitter">Jitter (ms):</label>
-    <input type="number" id="jitter" name="jitter" value="700"><br><br>
-    <button type="submit">Save</button>
-  </form>
+  <div class="popup-container">
+    <div class="flex-row items-center">
+      <img src="./icons/icon128.jpeg" alt="Strava Icon" style="width: 30px;">
+      <h1>Strava Kudoser v1</h1>
+    </div>
+    <form id="settingsForm" class="form">
+      <div class="flex-col">
+        <label for="clickTimeout">Click Timeout (ms):</label>
+        <small>The duration, in milliseconds, between each kudos click.</small>
+        <input type="number" id="clickTimeout" name="clickTimeout" value="2000">
+      </div>
+      
+      <div class="flex-col">
+        <label for="retryTimeout">Retry Timeout (ms):</label>
+        <small>The interval, in milliseconds, between each retry attempt when no buttons are detected.</small>
+        <input type="number" id="retryTimeout" name="retryTimeout" value="2000">
+      </div>
+      
+      <div class="flex-col">
+        <label for="maxRetries">Max Retries:</label>
+        <small>Maximum number of retry attempts when no additional undiscovered buttons are found.</small>
+        <input type="number" id="maxRetries" name="maxRetries" value="30">
+      </div>
+      
+      <div class="flex-col">
+        <label for="jitter">Jitter (ms):</label>
+        <small>Number of milliseconds to add as a buffer to the base click timeout to reduce the likelihood of encountering server request errors.</small>
+        <input type="number" id="jitter" name="jitter" value="2000">
+      </div>
+
+      <!-- Checkbox added here -->
+      <div class="flex-row items-center">
+        <input type="checkbox" id="termsAndConditions" class="terms-input" name="termsAndConditions" required>
+        <label for="termsAndConditions" class="terms-label">I have read the terms and condition below</label>
+      </div>
+
+      <button type="submit">
+        Save & Run Clicker
+      </button>
+
+      <div>
+        <h2>Terms and Conditions</h2>
+        <p>By clicking the button above, you acknowledge and agree that this program is not responsible for any consequences, issues, or damages that may occur to your Strava account. This includes, but is not limited to, any unauthorized access, data loss, changes to your account settings, or any other unforeseen events that may arise from using this program. You accept full responsibility for the actions taken and understand that this program operates independently of Strava and has no affiliation with or endorsement from Strava.</p>
+        <p>This extension has been created by <a href="https://jofftiquez.dev/gui" target="_blank">Joff Tiquez</a> solely for recreational and entertainment purposes. It is intended to be used for fun and enjoyment, and there are no guarantees or warranties regarding its functionality or performance. Please note that this extension is not intended for professional or critical use, and the creator assumes no responsibility for any issues or consequences arising from its use.</p>
+        <p>If you like this work you can follow me on my social accounts:</p>
+        <ul>
+          <li>
+            <a href="https://github.com/jofftiquez" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ridewithkuyawheels" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <a href="https://x.com/jrtiquez" target="_blank">X</a>
+          </li>
+          <li>
+            <a href="https://strava.com/athletes/jofftiquez" target="_blank">Strava</a>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
