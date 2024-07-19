@@ -2,6 +2,8 @@
 
 Automate Strava Kudos Clicks
 
+![image](https://github.com/user-attachments/assets/44a00311-428d-4904-8a18-4d51724a66de)
+
 ## Disclaimer
 
 By using this program, you acknowledge and agree that this program is not responsible for any consequences, issues, or damages that may occur to your Strava account. This includes, but is not limited to, any unauthorized access, data loss, changes to your account settings, or any other unforeseen events that may arise from using this program. You accept full responsibility for the actions taken and understand that this program operates independently of Strava and has no affiliation with or endorsement from Strava.
