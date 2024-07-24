@@ -9,13 +9,13 @@
   <div class="popup-container">
     <div class="flex-row items-center">
       <img src="./icons/icon128.png" alt="Strava Icon" style="width: 35px;">
-      <h1>Strava Kudoser v1</h1>
+      <h1>Strava Kudoser v1.0.1</h1>
     </div>
     <form id="settingsForm" class="form">
       <div class="flex-col">
         <label for="clickTimeout">Click Timeout (ms):</label>
         <small>The duration, in milliseconds, between each kudos click.</small>
-        <input type="number" id="clickTimeout" name="clickTimeout" value="2000">
+        <input type="number" id="clickTimeout" name="clickTimeout" value="3000">
       </div>
       
       <div class="flex-col">
@@ -33,18 +33,20 @@
       <div class="flex-col">
         <label for="jitter">Jitter (ms):</label>
         <small>Number of milliseconds to add as a buffer to the base click timeout to reduce the likelihood of encountering server request errors.</small>
-        <input type="number" id="jitter" name="jitter" value="2000">
+        <input type="number" id="jitter" name="jitter" value="3000">
       </div>
 
       <!-- Checkbox added here -->
-      <div class="flex-row items-center">
-        <input type="checkbox" id="termsAndConditions" class="terms-input" name="termsAndConditions" required>
-        <label for="termsAndConditions" class="terms-label">I have read the terms and condition below</label>
+      <div class="flex-col">
+        <div class="flex-row items-center">
+          <input type="checkbox" id="termsAndConditions" class="terms-input" name="termsAndConditions" required>
+          <label for="termsAndConditions" class="terms-label">I have read the terms and condition below</label>
+        </div>
+  
+        <button type="submit">
+          Save & Run Clicker
+        </button>
       </div>
-
-      <button type="submit">
-        Save & Run Clicker
-      </button>
 
       <div>
         <h2>Terms and Conditions</h2>
